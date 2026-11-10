@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>UFC START – Grande Luta da Freguesia</title>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Rubik:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050805;--card:#0d1a0f;--green:#00ff6a;--green2:#0fa84a;--ink:#eaffef;--mut:#7fb58f;--pink:#ff2bd6;--yel:#fff200;
+color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#050805;--card:#0d1a0f;--ink:#eaffef}}
+:root[data-theme="dark"]{--bg:#050805}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:radial-gradient(circle at 50% -10%,#0a3d1c 0,var(--bg) 55%) fixed;color:var(--ink);font-family:Rubik,system-ui,sans-serif;min-height:100vh;overflow-x:hidden}
+.wrap{max-width:480px;margin:0 auto;padding:14px 14px 40px}
+header{text-align:center;padding:10px 0 6px}
+.live{display:inline-flex;gap:6px;align-items:center;background:#1a0008;color:#ff4d6d;border:1px solid #ff4d6d;border-radius:99px;padding:3px 10px;font-size:12px;font-weight:700}
+.live i{width:8px;height:8px;border-radius:50%;background:#ff4d6d;animation:p 1s infinite}
+@keyframes p{50%{opacity:.2}}
+h1{font-family:Bungee,Impact,sans-serif;font-size:clamp(28px,9vw,40px);line-height:1;margin:12px 0 6px;color:var(--green);text-shadow:0 0 8px var(--green),0 0 24px var(--green2),3px 3px 0 #000;animation:glow 2.5s infinite alternate}
+@keyframes glow{to{text-shadow:0 0 14px var(--green),0 0 40px var(--green),3px 3px 0 #000}}
+.sub{font-family:Bungee,Impact,sans-serif;color:#000;background:var(--yel);display:inline-block;padding:4px 12px;transform:rotate(-2deg);font-size:15px;box-shadow:0 0 14px var(--yel)}
+.local{margin:12px 0 0;color:var(--mut);font-size:14px}.local b{color:var(--green)}
+.vs{display:flex;align-items:center;justify-content:center;margin:12px 0 -6px;position:relative;z-index:2}
+.vs span{font-family:Bungee,Impact,sans-serif;background:#000;color:var(--pink);border:2px solid var(--pink);border-radius:50%;width:54px;height:54px;display:grid;place-items:center;box-shadow:0 0 18px var(--pink);animation:p2 1.4s infinite}
+@keyframes p2{50%{transform:scale(1.12)}}
+.fighters{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.card{background:linear-gradient(180deg,#0f2a16,var(--card));border:2px solid var(--green2);border-radius:20px;padding:12px 8px 12px;text-align:center;box-shadow:0 0 18px rgba(0,255,106,.25),inset 0 0 20px rgba(0,255,106,.08);position:relative;overflow:hidden;transition:transform .15s}
+.card.pop{animation:pop .5s}
+@keyframes pop{40%{transform:scale(1.06);box-shadow:0 0 40px var(--green)}}
+.card.lead{border-color:var(--yel);box-shadow:0 0 22px rgba(255,242,0,.45)}
+.crown{position:absolute;top:6px;right:8px;font-size:18px;opacity:0;transition:.3s}.card.lead .crown{opacity:1}
+.card svg{width:100%;max-width:130px;height:auto;filter:drop-shadow(0 0 8px rgba(0,255,106,.5))}
+.name{font-family:Bungee,Impact,sans-serif;font-size:22px;margin:4px 0 0;color:#fff}
+.tag{font-size:11px;color:var(--mut);margin-bottom:8px}
+.odd{background:#000;border:1px solid var(--green);border-radius:12px;padding:6px;margin-bottom:6px}
+.odd small{display:block;font-size:10px;color:var(--mut);text-transform:uppercase;letter-spacing:1px}
+.odd b{font-family:Bungee,Impact,sans-serif;font-size:26px;color:var(--green);text-shadow:0 0 10px var(--green)}
+.cnt{font-size:13px;color:var(--mut);margin-bottom:10px}.cnt b{color:#fff;font-size:18px}
+button.bet{width:100%;border:0;border-radius:14px;padding:13px 4px;font-family:Bungee,Impact,sans-serif;font-size:13px;line-height:1.15;color:#001a08;background:linear-gradient(180deg,#5bff9b,var(--green));box-shadow:0 5px 0 #057a31,0 0 18px rgba(0,255,106,.6);cursor:pointer;transition:transform .08s,box-shadow .08s}
+button.bet:active{transform:translateY(4px);box-shadow:0 1px 0 #057a31,0 0 24px var(--green)}
+.bar{margin:16px 0 4px;height:16px;border-radius:99px;background:#1a0a22;overflow:hidden;display:flex;border:1px solid #333}
+.bar div{height:100%;transition:width .6s cubic-bezier(.2,1.4,.4,1)}
+#b1{background:linear-gradient(90deg,var(--green2),var(--green))}#b2{background:linear-gradient(90deg,var(--pink),#9b1fff)}
+.bl{display:flex;justify-content:space-between;font-size:12px;color:var(--mut)}
+.tot{text-align:center;margin-top:14px;font-size:13px;color:var(--mut)}.tot b{color:var(--yel)}
+.mine{text-align:center;font-size:12px;color:var(--mut);margin-top:6px;min-height:16px}
+.fine{text-align:center;font-size:11px;color:#4d7a5a;margin-top:18px}
+#ov{position:fixed;inset:0;background:rgba(0,0,0,.82);display:none;place-items:center;z-index:50;padding:20px}
+#ov.on{display:grid}
+.modal{background:linear-gradient(180deg,#0f2a16,#000);border:3px solid var(--green);border-radius:26px;padding:26px 20px;text-align:center;max-width:340px;width:100%;box-shadow:0 0 50px var(--green);animation:in .5s cubic-bezier(.2,1.6,.4,1)}
+@keyframes in{from{transform:scale(.3) rotate(-8deg);opacity:0}}
+.ck{width:84px;height:84px;margin:0 auto 10px;border-radius:50%;background:var(--green);display:grid;place-items:center;box-shadow:0 0 30px var(--green)}
+.ck svg{width:48px;height:48px;stroke:#001a08;stroke-width:6;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:60;stroke-dashoffset:60;animation:d .5s .3s forwards}
+@keyframes d{to{stroke-dashoffset:0}}
+.modal h2{font-family:Bungee,Impact,sans-serif;color:var(--green);margin:0 0 8px;font-size:24px;text-shadow:0 0 12px var(--green)}
+.modal p{margin:4px 0;font-size:16px}.modal .sm{color:var(--mut);font-size:13px}
+.modal button{margin-top:16px;border:2px solid var(--green);background:transparent;color:var(--green);font-family:Bungee,Impact,sans-serif;padding:10px 22px;border-radius:99px;font-size:14px;cursor:pointer}
+canvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:60}
+</style>
+</head>
+<body>
+<canvas id="cf"></canvas>
+<div class="wrap">
+<header>
+  <span class="live"><i></i>APOSTAS ABERTAS</span>
+  <h1>UFC START</h1>
+  <span class="sub">GRANDE LUTA DA FREGUESIA</span>
+  <p class="local">📍 Local: <b>START</b></p>
+</header>
+
+<div class="vs"><span>VS</span></div>
+<div class="fighters">
+  <div class="card" id="c1">
+    <div class="crown">👑</div>
+    <svg viewBox="0 0 120 130" aria-label="Allan">
+      <path d="M18 130c0-26 18-38 42-38s42 12 42 38z" fill="#00ff6a"/>
+      <rect x="50" y="80" width="20" height="16" fill="#c98b5e"/>
+      <ellipse cx="60" cy="52" rx="30" ry="34" fill="#e0a070"/>
+      <path d="M29 46c-2-26 16-34 31-34s33 8 31 34c-6-12-14-16-31-16s-25 4-31 16z" fill="#1b1b1b"/>
+      <circle cx="46" cy="54" r="12" fill="#fff" fill-opacity=".25" stroke="#000" stroke-width="3.5"/>
+      <circle cx="74" cy="54" r="12" fill="#fff" fill-opacity=".25" stroke="#000" stroke-width="3.5"/>
+      <path d="M58 54h4" stroke="#000" stroke-width="3.5"/>
+      <circle cx="46" cy="54" r="3" fill="#000"/><circle cx="74" cy="54" r="3" fill="#000"/>
+      <path d="M50 74q10 8 20 0" stroke="#7a3a1a" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <rect x="4" y="96" width="26" height="22" rx="10" fill="#ff2bd6"/><rect x="90" y="96" width="26" height="22" rx="10" fill="#ff2bd6"/>
+    </svg>
+    <div class="name">ALLAN</div><div class="tag">O Óculos Redondo</div>
+    <div class="odd"><small>Odd</small><b id="o1">2.00</b></div>
+    <div class="cnt"><b id="n1">0</b> apostas</div>
+    <button class="bet" id="bt1">APOSTAR NO ALLAN</button>
+  </div>
+  <div class="card" id="c2">
+    <div class="crown">👑</div>
+    <svg viewBox="0 0 120 130" aria-label="Micael">
+      <path d="M18 130c0-26 18-38 42-38s42 12 42 38z" fill="#ff2bd6"/>
+      <rect x="50" y="80" width="20" height="16" fill="#8a5a3a"/>
+      <ellipse cx="60" cy="52" rx="30" ry="34" fill="#a56e45"/>
+      <path d="M30 44c0-24 14-30 30-30s30 6 30 30c-6-10-14-12-30-12s-24 2-30 12z" fill="#0d0d0d"/>
+      <path d="M30 56c0 34 14 44 30 44s30-10 30-44c-4 12-8 18-14 20-6-4-22-4-32 0-6-2-10-8-14-20z" fill="#0d0d0d"/>
+      <path d="M50 78q10 6 20 0" stroke="#e8c9b0" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <rect x="32" y="45" width="24" height="18" rx="5" fill="#fff" fill-opacity=".25" stroke="#000" stroke-width="3.5"/>
+      <rect x="64" y="45" width="24" height="18" rx="5" fill="#fff" fill-opacity=".25" stroke="#000" stroke-width="3.5"/>
+      <path d="M56 52h8" stroke="#000" stroke-width="3.5"/>
+      <circle cx="44" cy="54" r="3" fill="#000"/><circle cx="76" cy="54" r="3" fill="#000"/>
+      <rect x="4" y="96" width="26" height="22" rx="10" fill="#00ff6a"/><rect x="90" y="96" width="26" height="22" rx="10" fill="#00ff6a"/>
+    </svg>
+    <div class="name">MICAEL</div><div class="tag">O Barbudão de Óculos</div>
+    <div class="odd"><small>Odd</small><b id="o2">2.00</b></div>
+    <div class="cnt"><b id="n2">0</b> apostas</div>
+    <button class="bet" id="bt2">APOSTAR NO MICAEL</button>
+  </div>
+</div>
+
+<div class="bar"><div id="b1" style="width:50%"></div><div id="b2" style="width:50%"></div></div>
+<div class="bl"><span id="p1">50%</span><span id="p2">50%</span></div>
+<div class="tot">🔥 Total de apostas: <b id="tot">0</b></div>
+<div class="mine" id="mine"></div>
+<p class="fine">Diversão entre amigos. Nenhum dinheiro de verdade envolvido 😉</p>
+</div>
+
+<div id="ov"><div class="modal">
+  <div class="ck"><svg viewBox="0 0 48 48"><path d="M10 25l9 9 19-20"/></svg></div>
+  <h2>APOSTA CONFIRMADA!</h2>
+  <p id="mm"></p>
+  <p class="sm" id="mo"></p>
+  <p>Agora é torcer! 🤞🥊</p>
+  <button id="ok">BORA!</button>
+</div></div>
+
+<script>
+(function(){
+  var KEY='ufc-start-v1', seed=[7,5], S={n:[seed[0],seed[1]],mine:[0,0]};
+  try{var r=localStorage.getItem(KEY);if(r){var j=JSON.parse(r);if(j&&j.n&&j.mine)S=j;}}catch(e){}
+  var names=['Allan','Micael'], $=function(i){return document.getElementById(i)};
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+  function odds(){var t=S.n[0]+S.n[1];return S.n.map(function(n){return Math.max(1.1,(t/n)*0.9).toFixed(2)})}
+  function render(){
+    var t=S.n[0]+S.n[1],o=odds();
+    for(var i=0;i<2;i++){
+      $('n'+(i+1)).textContent=S.n[i];
+      $('o'+(i+1)).textContent=o[i];
+      $('p'+(i+1)).textContent=Math.round(S.n[i]/t*100)+'%';
+      $('b'+(i+1)).style.width=(S.n[i]/t*100)+'%';
+      $('c'+(i+1)).classList.toggle('lead',S.n[i]>S.n[1-i]);
+    }
+    $('tot').textContent=t;
+    var m=S.mine[0]+S.mine[1];
+    $('mine').textContent=m?('Você já fez '+m+(m>1?' apostas':' aposta')+' (Allan: '+S.mine[0]+' · Micael: '+S.mine[1]+')'):'';
+  }
+  function bet(i){
+    S.n[i]++;S.mine[i]++;save();render();
+    var c=$('c'+(i+1));c.classList.remove('pop');void c.offsetWidth;c.classList.add('pop');
+    $('mm').innerHTML='Você apostou no <b style="color:#00ff6a">'+names[i].toUpperCase()+'</b>!';
+    $('mo').textContent='Odd atual: '+odds()[i]+'x · Aposta nº '+S.n[i]+' nele';
+    $('ov').classList.add('on');
+    if(navigator.vibrate){try{navigator.vibrate([40,30,80])}catch(e){}}
+    confetti();
+  }
+  $('bt1').onclick=function(){bet(0)};
+  $('bt2').onclick=function(){bet(1)};
+  $('ok').onclick=function(){$('ov').classList.remove('on')};
+  $('ov').onclick=function(e){if(e.target===this)this.classList.remove('on')};
+
+  var cv=$('cf'),cx=cv.getContext('2d'),P=[],run=false,cols=['#00ff6a','#fff200','#ff2bd6','#ffffff','#5bff9b','#00e5ff'];
+  function size(){cv.width=innerWidth*devicePixelRatio;cv.height=innerHeight*devicePixelRatio}
+  addEventListener('resize',size);size();
+  function confetti(){
+    var d=devicePixelRatio,w=cv.width,h=cv.height;
+    for(var k=0;k<130;k++){
+      var left=k%2===0;
+      P.push({x:left?0:w,y:h*0.7,vx:(left?1:-1)*(4+Math.random()*9)*d,vy:-(10+Math.random()*14)*d,s:(5+Math.random()*7)*d,c:cols[k%cols.length],r:Math.random()*6,vr:(Math.random()-.5)*.4,l:90+Math.random()*50});
+    }
+    if(!run){run=true;requestAnimationFrame(tick)}
+  }
+  function tick(){
+    cx.clearRect(0,0,cv.width,cv.height);
+    P=P.filter(function(p){return p.l>0&&p.y<cv.height+30});
+    P.forEach(function(p){
+      p.x+=p.vx;p.y+=p.vy;p.vy+=.45*devicePixelRatio;p.vx*=.99;p.r+=p.vr;p.l--;
+      cx.save();cx.translate(p.x,p.y);cx.rotate(p.r);cx.fillStyle=p.c;cx.globalAlpha=Math.min(1,p.l/30);cx.fillRect(-p.s/2,-p.s/4,p.s,p.s/2);cx.restore();
+    });
+    if(P.length)requestAnimationFrame(tick);else{run=false;cx.clearRect(0,0,cv.width,cv.height)}
+  }
+  render();
+})();
+</script>
+</body>
+</html>
